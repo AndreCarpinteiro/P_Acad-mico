@@ -66,6 +66,10 @@ namespace P_Académico.Produto
             Imagem result = response.ResultAs<Imagem>();
 
             MessageBox.Show("Imagem Inserida");
+
+
+            MessageBox.Show("Imagem Inserida");
+
         }
     }
 }
