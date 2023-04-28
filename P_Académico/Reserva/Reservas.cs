@@ -49,7 +49,8 @@ namespace P_Académico.Reserva
         };
 
         IFirebaseClient client;
-        //Converter o formato da data para ser aceite no SQL
+
+
         string selectDateAsString;
 
         private async void Reservas_Load(object sender, EventArgs e)
@@ -164,9 +165,6 @@ namespace P_Académico.Reserva
 
         private async void btnReservar_Click(object sender, EventArgs e)
         {
-            int reservaID;
-
-
             var reserva = new ClasseReserva()
             {
                 Nome = txtNome.Text,

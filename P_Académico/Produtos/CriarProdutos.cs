@@ -2,16 +2,22 @@
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
+using Newtonsoft.Json;
+using P_Académico.Cliente;
 using P_Académico.Produtos;
+using P_Académico.Reserva;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.IO;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -54,22 +60,30 @@ namespace P_Académico.Produto
             pictureBox1.Image.Save(ms, ImageFormat.Jpeg);
 
             byte[] a = ms.GetBuffer();
-
             string output = Convert.ToBase64String(a);
 
-            var data = new Imagem
+            var produto = new ClasseProduto()
             {
-                Img = output,
+                Nome = txtNome.Text,
+                Preco = txt_Preco.Text,
+                Categoria = cb_Categoria.Text,
+                Descricao = txt_Descrição.Text,
+                Img = output
             };
 
-            SetResponse response = await client.SetAsync("Imagem/", data);
-            Imagem result = response.ResultAs<Imagem>();
+            // Envia a nova reserva para o Firebase e aguarda a resposta assíncrona
+            var response = await client.PushAsync("Produtos", produto);
 
-            MessageBox.Show("Imagem Inserida");
-
-
-            MessageBox.Show("Imagem Inserida");
-
+            // Verifica se a operação foi bem-sucedida e obtem a chave da nova reserva
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                var key = response.Result.name;
+                MessageBox.Show($"Novo produto criado com sucesso! ID: {key}");
+            }
+            else
+            {
+                MessageBox.Show("Falha ao criar novo produto!");
+            }
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace P_Académico.Produtos
 {
-    class Imagem
+    class ClasseImagem
     {
         public string Img { get; set; }
     }
