@@ -41,6 +41,7 @@
             button4 = new Button();
             btnReservas = new Button();
             btn_CriarProdutos = new Button();
+            btn_Update_Produto = new Button();
             sidebar.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
@@ -168,11 +169,22 @@
             btn_CriarProdutos.UseVisualStyleBackColor = true;
             btn_CriarProdutos.Click += btn_CriarProdutos_Click;
             // 
+            // btn_Update_Produto
+            // 
+            btn_Update_Produto.Location = new Point(321, 316);
+            btn_Update_Produto.Name = "btn_Update_Produto";
+            btn_Update_Produto.Size = new Size(106, 50);
+            btn_Update_Produto.TabIndex = 7;
+            btn_Update_Produto.Text = "Update Delete Produto";
+            btn_Update_Produto.UseVisualStyleBackColor = true;
+            btn_Update_Produto.Click += btn_Update_Produto_Click;
+            // 
             // Menu
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.LightCoral;
             ClientSize = new Size(1182, 597);
+            Controls.Add(btn_Update_Produto);
             Controls.Add(btn_CriarProdutos);
             Controls.Add(btnReservas);
             Controls.Add(button4);
@@ -204,5 +216,6 @@
         private Button button4;
         private Button btnReservas;
         private Button btn_CriarProdutos;
+        private Button btn_Update_Produto;
     }
 }
