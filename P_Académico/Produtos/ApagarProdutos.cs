@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,8 +23,11 @@ namespace P_Académico.Produtos
         {
             InitializeComponent();
         }
+
         ClasseProduto produto = new ClasseProduto();
         string idEscolhido;
+        public static bool botaoClicado = false;
+        string output;
 
         IFirebaseConfig fcon = new FirebaseConfig()
         {
@@ -92,7 +96,6 @@ namespace P_Académico.Produtos
                 DataGridViewRow linhaSelecionada = dataGridView1.CurrentRow;
 
                 // Obter o valor da célula na primeira coluna da linha selecionada
-                // Obter o valor da célula na primeira coluna da linha selecionada
                 string valorCelula = linhaSelecionada.Cells[0].Value.ToString();
                 idEscolhido = valorCelula;
 
@@ -113,6 +116,7 @@ namespace P_Académico.Produtos
                             using (var stream = new MemoryStream(imagemBytes))
                             {
                                 pictureBox1.Image = new Bitmap(stream);
+                                output = Convert.ToBase64String(imagemBytes);
                             }
                         }
                         else
@@ -137,6 +141,106 @@ namespace P_Académico.Produtos
             txt_Descricao.Text = string.Empty;
             pictureBox1.Image = null;
             AtualizaDataGrid();
+        }
+
+        #region Confirma campos
+        private bool Confirma()
+        {
+            errpErro.Dispose();
+            int cnt = 0;
+            foreach (Control txtb in this.Controls)
+            {
+                //ver se o user escreveu n
+                if (txtb is TextBox)
+                {
+                    if (txtb.Text == string.Empty)
+                    {
+                        errpErro.SetError(txtb, "Preencha o campo");
+                        cnt++;
+                    }
+                }
+
+                //ver se o user escolheu um valor das comboboxes
+                if (txtb is ComboBox)
+                {
+                    if (((ComboBox)txtb).SelectedIndex == -1)
+                    {
+                        errpErro.SetError(txtb, "Escolha um valor");
+                        cnt++;
+                    }
+                }
+
+                //ver se o user preenhceu os campos dentro das groupboxes
+                if (txtb is System.Windows.Forms.GroupBox)
+                {
+                    foreach (Control tb in txtb.Controls)
+                    {
+                        if (tb is TextBox && tb is System.Windows.Forms.RadioButton)
+                        {
+                            errpErro.SetError(txtb, "Preencha os campos");
+                        }
+                    }
+                }
+            }
+            if (cnt == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        #endregion
+
+        private async void btn_Update_Click(object sender, EventArgs e)
+        {
+            if (botaoClicado == true) //Verificar se fomos procurar uma nova imagem, se não para não entrar aqui e não rebentar 
+            {
+                MemoryStream ms = new MemoryStream();
+                if (pictureBox1.Image != null)
+                {
+                    pictureBox1.Image.Save(ms, ImageFormat.Jpeg);
+                }
+
+                byte[] a = ms.GetBuffer();
+                output = Convert.ToBase64String(a);
+            }
+
+            var cli = new ClasseProduto
+            {
+                Nome = txt_Nome.Text,
+                Preco = txt_Preco.Text,
+                Descricao = txt_Descricao.Text,
+                Categoria = cmb_Categoria.Text,
+                Img = output
+            };
+
+            if (Confirma() == true)
+            {
+                FirebaseResponse resp = await client.UpdateAsync("Produtos/" + idEscolhido, cli);
+
+                AtualizaDataGrid();
+                MessageBox.Show("Atualizado com sucesso");
+            }
+            else
+            {
+                MessageBox.Show("Erro");
+            }
+        }
+
+        private void btn_Procurar_Click(object sender, EventArgs e)
+        {
+            botaoClicado = true;
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Seleciona a imagem";
+            ofd.Filter = "Formato da imagem(*.jpg) | *.jpg";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                Image img = new Bitmap(ofd.FileName);
+                pictureBox1.Image = img.GetThumbnailImage(350, 200, null, new IntPtr());
+            }
         }
     }
 }

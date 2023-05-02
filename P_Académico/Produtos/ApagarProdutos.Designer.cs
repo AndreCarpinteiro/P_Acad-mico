@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             dataGridView1 = new DataGridView();
             pictureBox1 = new PictureBox();
             btn_Apagar = new Button();
@@ -40,8 +41,11 @@
             btn_Update = new Button();
             label4 = new Label();
             txt_Descricao = new TextBox();
+            errpErro = new ErrorProvider(components);
+            btn_Procurar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errpErro).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
@@ -108,6 +112,7 @@
             // cmb_Categoria
             // 
             cmb_Categoria.FormattingEnabled = true;
+            cmb_Categoria.Items.AddRange(new object[] { "Prato", "Bebida", "Consumiveis" });
             cmb_Categoria.Location = new Point(433, 295);
             cmb_Categoria.Name = "cmb_Categoria";
             cmb_Categoria.Size = new Size(121, 23);
@@ -130,6 +135,7 @@
             btn_Update.TabIndex = 9;
             btn_Update.Text = "Update";
             btn_Update.UseVisualStyleBackColor = true;
+            btn_Update.Click += btn_Update_Click;
             // 
             // label4
             // 
@@ -148,11 +154,26 @@
             txt_Descricao.Size = new Size(241, 112);
             txt_Descricao.TabIndex = 10;
             // 
+            // errpErro
+            // 
+            errpErro.ContainerControl = this;
+            // 
+            // btn_Procurar
+            // 
+            btn_Procurar.Location = new Point(578, 218);
+            btn_Procurar.Name = "btn_Procurar";
+            btn_Procurar.Size = new Size(100, 42);
+            btn_Procurar.TabIndex = 12;
+            btn_Procurar.Text = "Procurar Imagem";
+            btn_Procurar.UseVisualStyleBackColor = true;
+            btn_Procurar.Click += btn_Procurar_Click;
+            // 
             // ApagarProdutos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(698, 605);
+            Controls.Add(btn_Procurar);
             Controls.Add(label4);
             Controls.Add(txt_Descricao);
             Controls.Add(btn_Update);
@@ -170,6 +191,7 @@
             Load += ApagarProdutos_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errpErro).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -188,5 +210,7 @@
         private Button btn_Update;
         private Label label4;
         private TextBox txt_Descricao;
+        private ErrorProvider errpErro;
+        private Button btn_Procurar;
     }
 }

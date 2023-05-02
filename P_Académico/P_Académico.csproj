@@ -9,10 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Pedido\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="FireSharp" Version="2.0.4" />
   </ItemGroup>
 

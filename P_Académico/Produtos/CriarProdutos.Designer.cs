@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             txtNome = new TextBox();
             label1 = new Label();
             cb_Categoria = new ComboBox();
@@ -39,7 +40,9 @@
             pictureBox1 = new PictureBox();
             btn_Pesquisar = new Button();
             btn_Inserir = new Button();
+            errpErro = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errpErro).BeginInit();
             SuspendLayout();
             // 
             // txtNome
@@ -143,6 +146,10 @@
             btn_Inserir.UseVisualStyleBackColor = true;
             btn_Inserir.Click += btn_Inserir_Click;
             // 
+            // errpErro
+            // 
+            errpErro.ContainerControl = this;
+            // 
             // CriarProduto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -162,6 +169,7 @@
             Name = "CriarProduto";
             Text = "CriarProduto";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errpErro).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -179,5 +187,6 @@
         private PictureBox pictureBox1;
         private Button btn_Pesquisar;
         private Button btn_Inserir;
+        private ErrorProvider errpErro;
     }
 }

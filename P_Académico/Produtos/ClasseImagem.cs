@@ -8,6 +8,6 @@ namespace P_Académico.Produtos
 {
     class ClasseImagem
     {
-        public string Img { get; set; }
+        public string Img { get; set; } = null;
     }
 }

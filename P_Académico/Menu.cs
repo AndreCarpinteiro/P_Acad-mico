@@ -6,6 +6,7 @@ using P_Académico.Funcionário;
 using P_Académico.Reserva;
 using P_Académico.Produto;
 using P_Académico.Produtos;
+using P_Académico.Pedido;
 
 namespace P_Académico
 {
@@ -91,6 +92,12 @@ namespace P_Académico
         {
             ApagarProdutos ApagaProduto = new ApagarProdutos();
             ApagaProduto.ShowDialog();
+        }
+
+        private void btn_CriarPedido_Click(object sender, EventArgs e)
+        {
+            CriarPedido criarPedido = new CriarPedido();
+            criarPedido.ShowDialog();
         }
     }
 }

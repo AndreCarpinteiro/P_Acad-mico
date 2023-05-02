@@ -42,6 +42,7 @@
             btnReservas = new Button();
             btn_CriarProdutos = new Button();
             btn_Update_Produto = new Button();
+            btn_CriarPedido = new Button();
             sidebar.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
@@ -179,11 +180,22 @@
             btn_Update_Produto.UseVisualStyleBackColor = true;
             btn_Update_Produto.Click += btn_Update_Produto_Click;
             // 
+            // btn_CriarPedido
+            // 
+            btn_CriarPedido.Location = new Point(321, 382);
+            btn_CriarPedido.Name = "btn_CriarPedido";
+            btn_CriarPedido.Size = new Size(106, 50);
+            btn_CriarPedido.TabIndex = 8;
+            btn_CriarPedido.Text = "Criar Pedido";
+            btn_CriarPedido.UseVisualStyleBackColor = true;
+            btn_CriarPedido.Click += btn_CriarPedido_Click;
+            // 
             // Menu
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.LightCoral;
             ClientSize = new Size(1182, 597);
+            Controls.Add(btn_CriarPedido);
             Controls.Add(btn_Update_Produto);
             Controls.Add(btn_CriarProdutos);
             Controls.Add(btnReservas);
@@ -217,5 +229,6 @@
         private Button btnReservas;
         private Button btn_CriarProdutos;
         private Button btn_Update_Produto;
+        private Button btn_CriarPedido;
     }
 }

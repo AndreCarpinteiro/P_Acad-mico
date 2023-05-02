@@ -57,7 +57,10 @@ namespace P_Académico.Produto
         private async void btn_Inserir_Click(object sender, EventArgs e)
         {
             MemoryStream ms = new MemoryStream();
-            pictureBox1.Image.Save(ms, ImageFormat.Jpeg);
+            if (pictureBox1.Image != null)
+            {
+                pictureBox1.Image.Save(ms, ImageFormat.Jpeg);
+            }
 
             byte[] a = ms.GetBuffer();
             string output = Convert.ToBase64String(a);
@@ -71,19 +74,73 @@ namespace P_Académico.Produto
                 Img = output
             };
 
-            // Envia a nova reserva para o Firebase e aguarda a resposta assíncrona
-            var response = await client.PushAsync("Produtos", produto);
-
-            // Verifica se a operação foi bem-sucedida e obtem a chave da nova reserva
-            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            if (Confirma() == true)
             {
-                var key = response.Result.name;
-                MessageBox.Show($"Novo produto criado com sucesso! ID: {key}");
+                // Envia a nova reserva para o Firebase e aguarda a resposta assíncrona
+                var response = await client.PushAsync("Produtos", produto);
+
+                // Verifica se a operação foi bem-sucedida e obtem a chave da nova reserva
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    var key = response.Result.name;
+                    MessageBox.Show($"Novo produto criado com sucesso! ID: {key}");
+                }
+                else
+                {
+                    MessageBox.Show("Falha ao criar novo produto!");
+                }
+            }
+        }
+
+        #region Confirma campos
+        //Ver se o user preencheu todos os campos do form
+        private bool Confirma()
+        {
+            errpErro.Dispose();
+            int cnt = 0;
+            foreach (Control txtb in this.Controls)
+            {
+                //ver se o user escreveu n
+                if (txtb is TextBox)
+                {
+                    if (txtb.Text == string.Empty)
+                    {
+                        errpErro.SetError(txtb, "Preencha o campo");
+                        cnt++;
+                    }
+                }
+
+                //ver se o user escolheu um valor das comboboxes
+                if (txtb is ComboBox)
+                {
+                    if (((ComboBox)txtb).SelectedIndex == -1)
+                    {
+                        errpErro.SetError(txtb, "Escolha um valor");
+                        cnt++;
+                    }
+                }
+
+                //ver se o user preenhceu os campos dentro das groupboxes
+                if (txtb is System.Windows.Forms.GroupBox)
+                {
+                    foreach (Control tb in txtb.Controls)
+                    {
+                        if (tb is TextBox && tb is System.Windows.Forms.RadioButton)
+                        {
+                            errpErro.SetError(txtb, "Preencha os campos");
+                        }
+                    }
+                }
+            }
+            if (cnt == 0)
+            {
+                return true;
             }
             else
             {
-                MessageBox.Show("Falha ao criar novo produto!");
+                return false;
             }
         }
+        #endregion
     }
 }
