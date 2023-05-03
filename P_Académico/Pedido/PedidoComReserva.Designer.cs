@@ -1,6 +1,6 @@
 ﻿namespace P_Académico.Pedido
 {
-    partial class CriarPedido
+    partial class PedidoComReserva
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "CriarPedido";
+            btn_carta = new Button();
+            SuspendLayout();
+            // 
+            // btn_carta
+            // 
+            btn_carta.Location = new Point(361, 140);
+            btn_carta.Name = "btn_carta";
+            btn_carta.Size = new Size(132, 47);
+            btn_carta.TabIndex = 0;
+            btn_carta.Text = "Carta";
+            btn_carta.UseVisualStyleBackColor = true;
+            btn_carta.Click += btn_carta_Click;
+            // 
+            // PedidoComReserva
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(btn_carta);
+            Name = "PedidoComReserva";
+            Text = "PedidoComReserva";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button btn_carta;
     }
 }

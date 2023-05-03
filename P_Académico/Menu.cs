@@ -96,7 +96,7 @@ namespace P_Académico
 
         private void btn_CriarPedido_Click(object sender, EventArgs e)
         {
-            CriarPedido criarPedido = new CriarPedido();
+            PrePedido criarPedido = new PrePedido();
             criarPedido.ShowDialog();
         }
     }

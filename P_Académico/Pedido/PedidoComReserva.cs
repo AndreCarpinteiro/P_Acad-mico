@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace P_Académico.Pedido
 {
-    public partial class CriarPedido : Form
+    public partial class PedidoComReserva : Form
     {
-        public CriarPedido()
+        public PedidoComReserva()
         {
             InitializeComponent();
+        }
+
+        private void btn_carta_Click(object sender, EventArgs e)
+        {
+            Carta carta = new Carta();
+            carta.ShowDialog();
         }
     }
 }
