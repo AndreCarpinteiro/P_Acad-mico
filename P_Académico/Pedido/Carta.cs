@@ -47,6 +47,7 @@ namespace P_Académico.Pedido
             AddCategory();
             panelProdutos.Controls.Clear();
             CarregarProdutos();
+            dataGridView1.BorderStyle = BorderStyle.FixedSingle;
         }
 
         private async void AddCategory()
@@ -98,20 +99,20 @@ namespace P_Académico.Pedido
 
             panelProdutos.Controls.Add(w);
 
-            w.onSelect += (ss, ee) =>
+            w.onSelect += (ss, ee) =>  //Entra aqui quando o uc é selecionado (metodo da classe) 
             {
                 var wdg = (ucProduto)ss;
-
                 foreach (DataGridViewRow item in dataGridView1.Rows)
                 {
-                    if (Convert.ToInt32(item.Cells["dgvid"].Value) == wdg.id)
+                    if (Convert.ToInt32(item.Cells["Id"].Value) == wdg.id)
                     {
-                        item.Cells["dgvQty"].Value = int.Parse(item.Cells["dgvQty"].ToString()) + 1;
-                        item.Cells["dgvAmount"].Value = int.Parse(item.Cells["dgvQty"].ToString()) * double.Parse(item.Cells["dgvPrice"].ToString());
+                        item.Cells["Quantidade"].Value = int.Parse(item.Cells["Quantidade"].Value.ToString()) + 1;
+                        item.Cells["Amount"].Value = int.Parse(item.Cells["Quantidade"].Value.ToString()) *
+                        double.Parse(item.Cells["Preço"].Value.ToString());
+                        return;
                     }
-
-                    dataGridView1.Rows.Add(new object[] { 0, wdg.id, wdg.Nome, 1, wdg.Preco });
                 }
+                dataGridView1.Rows.Add(new object[] { 0, wdg.id, wdg.Nome, 1, wdg.Preco });
             };
         }
 
@@ -135,7 +136,7 @@ namespace P_Académico.Pedido
                         if (response != null && response.Body != null)
                         {
                             string base64 = response.Body.ToString();
-                            imagemBytes = Convert.FromBase64String(base64);
+                            // imagemBytes = Convert.FromBase64String(base64);
                         }
                     }
 
@@ -155,5 +156,24 @@ namespace P_Académico.Pedido
             }
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            foreach (var item in panelProdutos.Controls)
+            {//Pesquisa da text box
+                var pro = (ucProduto)item;
+                pro.Visible = pro.Nome.ToLower().Contains(textBox1.Text.Trim().ToLower());
+            }
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            int count = 0;
+
+            foreach(DataGridViewRow row in dataGridView1.Rows)
+            {
+                count++;
+                row.Cells[0].Value = count;
+            }
+        }
     }
 }

@@ -41,5 +41,15 @@ namespace P_Académico.Pedido
         {
             onSelect?.Invoke(this, e);
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            onSelect?.Invoke(this, e);
+        }
     }
 }

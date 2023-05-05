@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucProduto));
             panel1 = new Panel();
-            button1 = new Button();
             panel2 = new Panel();
             lbl_Nome = new Label();
             txt_Imagem = new PictureBox();
@@ -41,23 +40,15 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.Azure;
-            panel1.Controls.Add(button1);
+            panel1.BackColor = Color.Peru;
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(txt_Imagem);
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
             panel1.Size = new Size(182, 188);
             panel1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            button1.BackColor = SystemColors.ButtonShadow;
-            button1.Location = new Point(-1, 135);
-            button1.Name = "button1";
-            button1.Size = new Size(184, 10);
-            button1.TabIndex = 2;
-            button1.UseVisualStyleBackColor = false;
+            panel1.Click += panel1_Click;
+            panel1.Paint += panel1_Paint;
             // 
             // panel2
             // 
@@ -87,7 +78,6 @@
             txt_Imagem.SizeMode = PictureBoxSizeMode.Zoom;
             txt_Imagem.TabIndex = 0;
             txt_Imagem.TabStop = false;
-            txt_Imagem.Click += txt_Imagem_Click;
             // 
             // ucProduto
             // 
@@ -108,6 +98,5 @@
         private Panel panel2;
         private PictureBox txt_Imagem;
         private Label lbl_Nome;
-        private Button button1;
     }
 }
