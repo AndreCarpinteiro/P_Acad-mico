@@ -15,6 +15,10 @@ using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FirebaseAdmin;
+using FirebaseAdmin.Auth;
+using Google.Apis.Auth.OAuth2;
+using System.Security.Cryptography;
 
 
 namespace P_Académico.Cliente
@@ -33,6 +37,8 @@ namespace P_Académico.Cliente
             BasePath = "https://restaurante-b1d36-default-rtdb.firebaseio.com/"
         };
         IFirebaseClient client;
+        private ClasseCliente clienteSelecionado; // Variável para armazenar o cliente selecionado
+
 
         private void ApagarEditarCliente_Load(object sender, EventArgs e)
         {
@@ -75,7 +81,7 @@ namespace P_Académico.Cliente
 
             foreach (var item in record)
             {
-                dataGridView1.Rows.Add(item.Key, item.Value.Nome, item.Value.Apelido, item.Value.Endereco);
+                dataGridView1.Rows.Add(item.Value.NIF, item.Value.Nome, item.Value.Apelido, item.Value.Endereco);
                 cliente.ListaDeClientes.Add(record[item.Key]);
             }
         }
@@ -92,21 +98,20 @@ namespace P_Académico.Cliente
                 string valorCelula = linhaSelecionada.Cells[0].Value.ToString();
 
                 txtNIF.Text = valorCelula;
-                int count = 0;
-                foreach (ClasseCliente item in cliente.ListaDeClientes)
-                {
-                    if (valorCelula == cliente.ListaDeClientes[count].NIF)
-                    {
-                        txtApelido.Text = cliente.ListaDeClientes[count].Apelido;
-                        txtNome.Text = cliente.ListaDeClientes[count].Nome;
-                        txtEndereço.Text = cliente.ListaDeClientes[count].Endereco;
-                        txtEmail.Text = cliente.ListaDeClientes[count].Email;
-                        txtContacto.Text = cliente.ListaDeClientes[count].ContactoTelefonico;
-                        PickerNascimento.Text = cliente.ListaDeClientes[count].DataNascimento;
-                    }
-                    count++;
-                }
 
+                // Procurar o cliente selecionado na lista de clientes
+                clienteSelecionado = cliente.ListaDeClientes.FirstOrDefault(c => c.NIF == valorCelula);
+
+                if (clienteSelecionado != null)
+                {
+                    // Preencher os campos com os detalhes do cliente selecionado
+                    txtApelido.Text = clienteSelecionado.Apelido;
+                    txtNome.Text = clienteSelecionado.Nome;
+                    txtEndereço.Text = clienteSelecionado.Endereco;
+                    txtEmail.Text = clienteSelecionado.Email;
+                    txtContacto.Text = clienteSelecionado.ContactoTelefonico;
+                    PickerNascimento.Text = clienteSelecionado.DataNascimento;
+                }
             }
         }
 
@@ -283,10 +288,48 @@ namespace P_Académico.Cliente
         }
         #endregion
 
-        private void btnApagar_Click(object sender, EventArgs e)
+        private async void btnApagar_Click(object sender, EventArgs e)
         {
-            FirebaseResponse response = client.Delete("ListaClientes/" + txtNIF.Text);
-            MessageBox.Show("Apagado com sucesso");
+            try
+            {
+                string uid = clienteSelecionado.Id;
+                // Excluir o utilizador do Firebase Authentication
+                    string path = Path.Combine(Environment.CurrentDirectory, "C:\\Users\\André\\Desktop\\Projecto Académico\\P_Académico\\restaurante-b1d36-firebase-adminsdk-disgo-c4a8b9808c.json");
+                    var credential = GoogleCredential.FromFile(path);
+                    FirebaseApp firebaseApp = FirebaseApp.Create(new AppOptions()
+                    {
+                        Credential = credential
+                    });
+                    FirebaseAuth auth = FirebaseAuth.GetAuth(firebaseApp);
+                    await auth.DeleteUserAsync(uid);
+
+                // Excluir o registro do cliente do banco de dados Firebase Realtime
+                FirebaseResponse response = await client.DeleteAsync("ListaClientes/" + uid);
+
+                // Verificar se a exclusão foi bem-sucedida
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    MessageBox.Show("Cliente excluído com sucesso");
+
+                    // Limpar os campos do formulário
+                    LimparCampos();
+
+                    // Atualizar o DataGridView
+                    AtualizaDataGrid();
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao excluir o cliente");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro: " + ex.Message);
+            }
+        }
+
+        private void LimparCampos()
+        {
             txtNIF.Text = string.Empty;
             txtEndereço.Text = string.Empty;
             txtEmail.Text = string.Empty;
@@ -294,7 +337,6 @@ namespace P_Académico.Cliente
             txtNome.Text = string.Empty;
             txtApelido.Text = string.Empty;
             PickerNascimento.Text = string.Empty;
-            AtualizaDataGrid();
         }
     }
 }

@@ -169,11 +169,16 @@ namespace P_Académico.Pedido
         {
             int count = 0;
 
-            foreach(DataGridViewRow row in dataGridView1.Rows)
+            foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 count++;
                 row.Cells[0].Value = count;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

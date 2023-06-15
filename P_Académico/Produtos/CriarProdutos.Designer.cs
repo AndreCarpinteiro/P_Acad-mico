@@ -122,13 +122,14 @@
             pictureBox1.BackColor = SystemColors.ActiveBorder;
             pictureBox1.Location = new Point(576, 57);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(198, 164);
+            pictureBox1.Size = new Size(295, 202);
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // btn_Pesquisar
             // 
-            btn_Pesquisar.Location = new Point(576, 245);
+            btn_Pesquisar.Location = new Point(620, 289);
             btn_Pesquisar.Name = "btn_Pesquisar";
             btn_Pesquisar.Size = new Size(198, 47);
             btn_Pesquisar.TabIndex = 10;
@@ -154,7 +155,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(833, 428);
+            ClientSize = new Size(912, 365);
             Controls.Add(btn_Inserir);
             Controls.Add(btn_Pesquisar);
             Controls.Add(pictureBox1);

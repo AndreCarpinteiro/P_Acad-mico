@@ -99,5 +99,11 @@ namespace P_Académico
             PrePedido criarPedido = new PrePedido();
             criarPedido.ShowDialog();
         }
+
+        private void btn_updatefunc_Click(object sender, EventArgs e)
+        {
+            ApagarEditarFuncionario apagarEditarFuncionario = new ApagarEditarFuncionario();
+            apagarEditarFuncionario.ShowDialog();
+        }
     }
 }

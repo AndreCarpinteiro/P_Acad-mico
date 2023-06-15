@@ -49,7 +49,7 @@ namespace P_Académico.Produto
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 Image img = new Bitmap(ofd.FileName);
-                pictureBox1.Image = img.GetThumbnailImage(350, 200, null, new IntPtr());
+                pictureBox1.Image = img.GetThumbnailImage(300, 250, null, new IntPtr());
             }
 
         }
@@ -142,5 +142,10 @@ namespace P_Académico.Produto
             }
         }
         #endregion
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

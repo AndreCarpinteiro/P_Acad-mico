@@ -43,6 +43,7 @@
             btn_CriarProdutos = new Button();
             btn_Update_Produto = new Button();
             btn_CriarPedido = new Button();
+            btn_updatefunc = new Button();
             sidebar.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
@@ -190,11 +191,22 @@
             btn_CriarPedido.UseVisualStyleBackColor = true;
             btn_CriarPedido.Click += btn_CriarPedido_Click;
             // 
+            // btn_updatefunc
+            // 
+            btn_updatefunc.Location = new Point(478, 114);
+            btn_updatefunc.Name = "btn_updatefunc";
+            btn_updatefunc.Size = new Size(106, 51);
+            btn_updatefunc.TabIndex = 9;
+            btn_updatefunc.Text = "Update Delete Funcionário";
+            btn_updatefunc.UseVisualStyleBackColor = true;
+            btn_updatefunc.Click += btn_updatefunc_Click;
+            // 
             // Menu
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.LightCoral;
             ClientSize = new Size(1182, 597);
+            Controls.Add(btn_updatefunc);
             Controls.Add(btn_CriarPedido);
             Controls.Add(btn_Update_Produto);
             Controls.Add(btn_CriarProdutos);
@@ -230,5 +242,6 @@
         private Button btn_CriarProdutos;
         private Button btn_Update_Produto;
         private Button btn_CriarPedido;
+        public Button btn_updatefunc;
     }
 }

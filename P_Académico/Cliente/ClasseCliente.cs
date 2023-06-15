@@ -13,6 +13,7 @@ namespace P_Académico.Cliente
         public string Apelido { get; set; }
         public string ContactoTelefonico { get; set; }
         public string Email { get; set; }
+        public string Id { get; set; }
         public string DataNascimento { get; set; }
         public string NIF { get; set; }
         public string Endereco { get; set; }

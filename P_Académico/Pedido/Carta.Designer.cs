@@ -31,31 +31,33 @@
             panelCategoria = new FlowLayoutPanel();
             panelProdutos = new FlowLayoutPanel();
             dataGridView1 = new DataGridView();
-            Id = new DataGridViewTextBoxColumn();
-            Nome = new DataGridViewTextBoxColumn();
-            Preço = new DataGridViewTextBoxColumn();
-            Quantidade = new DataGridViewTextBoxColumn();
-            Amount = new DataGridViewTextBoxColumn();
-            panel1 = new Panel();
+            btn_Adicionar = new Panel();
+            button1 = new Button();
             panel2 = new Panel();
             textBox1 = new TextBox();
+            Nome = new DataGridViewTextBoxColumn();
+            Amount = new DataGridViewTextBoxColumn();
+            Id = new DataGridViewTextBoxColumn();
+            Preço = new DataGridViewTextBoxColumn();
+            Quantidade = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            btn_Adicionar.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panelCategoria
             // 
             panelCategoria.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            panelCategoria.Location = new Point(34, 106);
+            panelCategoria.Location = new Point(7, 106);
             panelCategoria.Name = "panelCategoria";
-            panelCategoria.Size = new Size(175, 471);
+            panelCategoria.Size = new Size(254, 471);
             panelCategoria.TabIndex = 0;
             // 
             // panelProdutos
             // 
             panelProdutos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelProdutos.BackColor = SystemColors.ButtonFace;
-            panelProdutos.Location = new Point(226, 106);
+            panelProdutos.Location = new Point(272, 106);
             panelProdutos.Name = "panelProdutos";
             panelProdutos.Size = new Size(586, 471);
             panelProdutos.TabIndex = 1;
@@ -63,69 +65,34 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Id, Nome, Preço, Quantidade, Amount });
-            dataGridView1.Location = new Point(818, 109);
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nome, Amount, Id, Preço, Quantidade });
+            dataGridView1.Location = new Point(866, 106);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(340, 468);
+            dataGridView1.Size = new Size(303, 468);
             dataGridView1.TabIndex = 2;
             dataGridView1.CellFormatting += dataGridView1_CellFormatting;
             // 
-            // Id
+            // btn_Adicionar
             // 
-            Id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            Id.FillWeight = 30F;
-            Id.HeaderText = "Id";
-            Id.MinimumWidth = 30;
-            Id.Name = "Id";
-            Id.Width = 30;
+            btn_Adicionar.BackColor = Color.FromArgb(34, 36, 49);
+            btn_Adicionar.Controls.Add(button1);
+            btn_Adicionar.Dock = DockStyle.Bottom;
+            btn_Adicionar.Location = new Point(0, 583);
+            btn_Adicionar.Name = "btn_Adicionar";
+            btn_Adicionar.Size = new Size(1179, 100);
+            btn_Adicionar.TabIndex = 3;
             // 
-            // Nome
+            // button1
             // 
-            Nome.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            Nome.FillWeight = 150F;
-            Nome.HeaderText = "Nome";
-            Nome.MinimumWidth = 150;
-            Nome.Name = "Nome";
-            Nome.Width = 150;
-            // 
-            // Preço
-            // 
-            Preço.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            Preço.FillWeight = 50F;
-            Preço.HeaderText = "Preço";
-            Preço.MinimumWidth = 50;
-            Preço.Name = "Preço";
-            Preço.Width = 50;
-            // 
-            // Quantidade
-            // 
-            Quantidade.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            Quantidade.FillWeight = 50F;
-            Quantidade.HeaderText = "Quantidade";
-            Quantidade.MinimumWidth = 50;
-            Quantidade.Name = "Quantidade";
-            Quantidade.Width = 50;
-            // 
-            // Amount
-            // 
-            Amount.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            Amount.FillWeight = 70F;
-            Amount.HeaderText = "Amount";
-            Amount.MinimumWidth = 70;
-            Amount.Name = "Amount";
-            Amount.Width = 70;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(34, 36, 49);
-            panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 583);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1179, 100);
-            panel1.TabIndex = 3;
+            button1.Location = new Point(954, 39);
+            button1.Name = "button1";
+            button1.Size = new Size(130, 37);
+            button1.TabIndex = 0;
+            button1.Text = "Adicionar";
+            button1.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -146,13 +113,54 @@
             textBox1.TabIndex = 0;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
+            // Nome
+            // 
+            Nome.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            Nome.FillWeight = 150F;
+            Nome.HeaderText = "Nome";
+            Nome.MinimumWidth = 150;
+            Nome.Name = "Nome";
+            Nome.Width = 150;
+            // 
+            // Amount
+            // 
+            Amount.HeaderText = "Amount";
+            Amount.Name = "Amount";
+            Amount.ReadOnly = true;
+            Amount.Visible = false;
+            // 
+            // Id
+            // 
+            Id.HeaderText = "ID";
+            Id.Name = "Id";
+            Id.ReadOnly = true;
+            Id.Visible = false;
+            // 
+            // Preço
+            // 
+            Preço.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            Preço.FillWeight = 50F;
+            Preço.HeaderText = "Preço";
+            Preço.MinimumWidth = 50;
+            Preço.Name = "Preço";
+            Preço.Width = 60;
+            // 
+            // Quantidade
+            // 
+            Quantidade.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            Quantidade.FillWeight = 50F;
+            Quantidade.HeaderText = "Quantidade";
+            Quantidade.MinimumWidth = 50;
+            Quantidade.Name = "Quantidade";
+            Quantidade.Width = 90;
+            // 
             // Carta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1179, 683);
             Controls.Add(panel2);
-            Controls.Add(panel1);
+            Controls.Add(btn_Adicionar);
             Controls.Add(dataGridView1);
             Controls.Add(panelProdutos);
             Controls.Add(panelCategoria);
@@ -160,6 +168,7 @@
             Text = "Carta";
             Load += Carta_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            btn_Adicionar.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
@@ -170,13 +179,14 @@
         private FlowLayoutPanel panelCategoria;
         private FlowLayoutPanel panelProdutos;
         private DataGridView dataGridView1;
-        private Panel panel1;
+        private Panel btn_Adicionar;
         private Panel panel2;
         private TextBox textBox1;
-        private DataGridViewTextBoxColumn Id;
+        private Button button1;
         private DataGridViewTextBoxColumn Nome;
+        private DataGridViewTextBoxColumn Amount;
+        private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Preço;
         private DataGridViewTextBoxColumn Quantidade;
-        private DataGridViewTextBoxColumn Amount;
     }
 }
