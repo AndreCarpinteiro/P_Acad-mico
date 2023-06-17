@@ -118,8 +118,44 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="3502458" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3502458.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="27714062" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\27714062.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="283-2836056_delivery-box-product-cart-shipping-shipping-product-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\283-2836056_delivery-box-product-cart-shipping-shipping-product-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="b3ccd57b054a73af1a0d281265b54ec8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\b3ccd57b054a73af1a0d281265b54ec8.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="111-1110799_home-visits-hangouts-home-icon-outline-png-transparent1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\111-1110799_home-visits-hangouts-home-icon-outline-png-transparent1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="4-41237_free-icons-png-new-home-icon-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\4-41237_free-icons-png-new-home-icon-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="27714063" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\27714063.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="27714061" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\27714061.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="27714067" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\27714067.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="2771406" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2771406.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="png-transparent-shopping-cart-icon-product-return-shopping-cart-retail-supermarket-objects-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\png-transparent-shopping-cart-icon-product-return-shopping-cart-retail-supermarket-objects-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="27714066" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\27714066.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="27714064" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\27714064.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="111-1110799_home-visits-hangouts-home-icon-outline-png-transparent" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\111-1110799_home-visits-hangouts-home-icon-outline-png-transparent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -127,13 +163,16 @@
   <data name="4-41237_free-icons-png-new-home-icon-removebg-preview1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\4-41237_free-icons-png-new-home-icon-removebg-preview1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="b3ccd57b054a73af1a0d281265b54ec8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\b3ccd57b054a73af1a0d281265b54ec8.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="27714065" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\27714065.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="4-41237_free-icons-png-new-home-icon-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4-41237_free-icons-png-new-home-icon-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="png-transparent-shopping-cart-icon-product-return-shopping-cart-retail-supermarket-objects" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\png-transparent-shopping-cart-icon-product-return-shopping-cart-retail-supermarket-objects.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="3502458" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\3502458.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="png-transparent-computer-icons-agenda-miscellaneous-cdr-text" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\png-transparent-computer-icons-agenda-miscellaneous-cdr-text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="3082745" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3082745.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

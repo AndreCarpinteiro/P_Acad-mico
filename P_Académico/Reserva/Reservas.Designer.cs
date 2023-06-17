@@ -55,7 +55,12 @@
             btnReservar = new Button();
             label6 = new Label();
             txt_Mesa = new TextBox();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            pictureBox1 = new PictureBox();
             groupBox1.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -70,7 +75,8 @@
             groupBox1.Controls.Add(btn_14);
             groupBox1.Controls.Add(btn_13);
             groupBox1.Controls.Add(btn_12);
-            groupBox1.Location = new Point(296, 22);
+            groupBox1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox1.Location = new Point(296, 89);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(291, 193);
             groupBox1.TabIndex = 0;
@@ -82,7 +88,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(8, 114);
             label2.Name = "label2";
-            label2.Size = new Size(38, 15);
+            label2.Size = new Size(62, 21);
             label2.TabIndex = 9;
             label2.Text = "Jantar";
             // 
@@ -91,7 +97,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(8, 25);
             label1.Name = "label1";
-            label1.Size = new Size(49, 15);
+            label1.Size = new Size(71, 21);
             label1.TabIndex = 8;
             label1.Text = "Almoço";
             // 
@@ -186,69 +192,77 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(232, 308);
+            label5.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(232, 375);
             label5.Name = "label5";
-            label5.Size = new Size(113, 15);
+            label5.Size = new Size(171, 21);
             label5.TabIndex = 49;
             label5.Text = "Contacto Telefónico";
             // 
             // txtContacto
             // 
-            txtContacto.Location = new Point(232, 326);
+            txtContacto.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtContacto.Location = new Point(232, 393);
             txtContacto.Name = "txtContacto";
             txtContacto.ReadOnly = true;
-            txtContacto.Size = new Size(172, 23);
+            txtContacto.Size = new Size(172, 27);
             txtContacto.TabIndex = 48;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 375);
+            label3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(12, 435);
             label3.Name = "label3";
-            label3.Size = new Size(48, 15);
+            label3.Size = new Size(71, 21);
             label3.TabIndex = 45;
             label3.Text = "Apelido";
             // 
             // txtApelido
             // 
-            txtApelido.Location = new Point(12, 392);
+            txtApelido.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtApelido.Location = new Point(12, 459);
             txtApelido.Name = "txtApelido";
             txtApelido.ReadOnly = true;
-            txtApelido.Size = new Size(172, 23);
+            txtApelido.Size = new Size(172, 27);
             txtApelido.TabIndex = 44;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(12, 308);
+            label7.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Location = new Point(12, 368);
             label7.Name = "label7";
-            label7.Size = new Size(40, 15);
+            label7.Size = new Size(57, 21);
             label7.TabIndex = 43;
             label7.Text = "Nome";
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(12, 325);
+            txtNome.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNome.Location = new Point(12, 392);
             txtNome.Name = "txtNome";
             txtNome.ReadOnly = true;
-            txtNome.Size = new Size(172, 23);
+            txtNome.Size = new Size(172, 27);
             txtNome.TabIndex = 42;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(232, 375);
+            label9.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Location = new Point(232, 435);
             label9.Name = "label9";
-            label9.Size = new Size(25, 15);
+            label9.Size = new Size(35, 21);
             label9.TabIndex = 41;
             label9.Text = "NIF";
             // 
             // txtNIF
             // 
-            txtNIF.Location = new Point(232, 392);
+            txtNIF.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNIF.Location = new Point(232, 459);
             txtNIF.Name = "txtNIF";
             txtNIF.ReadOnly = true;
-            txtNIF.Size = new Size(172, 23);
+            txtNIF.Size = new Size(172, 27);
             txtNIF.TabIndex = 40;
             // 
             // Lb_ClientesNif
@@ -256,7 +270,7 @@
             Lb_ClientesNif.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Lb_ClientesNif.FormattingEnabled = true;
             Lb_ClientesNif.ItemHeight = 21;
-            Lb_ClientesNif.Location = new Point(12, 47);
+            Lb_ClientesNif.Location = new Point(12, 114);
             Lb_ClientesNif.Name = "Lb_ClientesNif";
             Lb_ClientesNif.Size = new Size(266, 235);
             Lb_ClientesNif.TabIndex = 50;
@@ -264,17 +278,19 @@
             // 
             // DP_Reserva
             // 
-            DP_Reserva.Location = new Point(344, 268);
+            DP_Reserva.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            DP_Reserva.Location = new Point(337, 335);
             DP_Reserva.Name = "DP_Reserva";
-            DP_Reserva.Size = new Size(200, 23);
+            DP_Reserva.Size = new Size(224, 27);
             DP_Reserva.TabIndex = 51;
             // 
             // hora_selecionada
             // 
-            hora_selecionada.Location = new Point(296, 235);
+            hora_selecionada.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            hora_selecionada.Location = new Point(296, 302);
             hora_selecionada.Name = "hora_selecionada";
             hora_selecionada.ReadOnly = true;
-            hora_selecionada.Size = new Size(83, 23);
+            hora_selecionada.Size = new Size(83, 27);
             hora_selecionada.TabIndex = 52;
             // 
             // lb_Mesas
@@ -282,7 +298,7 @@
             lb_Mesas.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lb_Mesas.FormattingEnabled = true;
             lb_Mesas.ItemHeight = 21;
-            lb_Mesas.Location = new Point(611, 47);
+            lb_Mesas.Location = new Point(611, 114);
             lb_Mesas.Name = "lb_Mesas";
             lb_Mesas.Size = new Size(232, 340);
             lb_Mesas.TabIndex = 53;
@@ -291,15 +307,17 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(611, 22);
+            label4.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(611, 89);
             label4.Name = "label4";
-            label4.Size = new Size(108, 15);
+            label4.Size = new Size(152, 21);
             label4.TabIndex = 54;
             label4.Text = "Mesas Disponíveiss";
             // 
             // btnReservar
             // 
-            btnReservar.Location = new Point(435, 373);
+            btnReservar.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnReservar.Location = new Point(450, 444);
             btnReservar.Name = "btnReservar";
             btnReservar.Size = new Size(109, 42);
             btnReservar.TabIndex = 55;
@@ -310,25 +328,57 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(12, 22);
+            label6.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(12, 89);
             label6.Name = "label6";
-            label6.Size = new Size(142, 15);
+            label6.Size = new Size(213, 21);
             label6.TabIndex = 56;
             label6.Text = "Identificação dos Clientes";
             // 
             // txt_Mesa
             // 
-            txt_Mesa.Location = new Point(504, 239);
+            txt_Mesa.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Mesa.Location = new Point(504, 306);
             txt_Mesa.Name = "txt_Mesa";
             txt_Mesa.ReadOnly = true;
-            txt_Mesa.Size = new Size(83, 23);
+            txt_Mesa.Size = new Size(83, 27);
             txt_Mesa.TabIndex = 57;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(34, 36, 49);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Location = new Point(-1, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(867, 75);
+            panel1.TabIndex = 58;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(34, 36, 49);
+            panel2.Location = new Point(-1, 509);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(867, 75);
+            panel2.TabIndex = 59;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources._27714067;
+            pictureBox1.Location = new Point(13, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(73, 52);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // Reservas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(867, 438);
+            BackColor = Color.LightCoral;
+            ClientSize = new Size(865, 582);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             Controls.Add(txt_Mesa);
             Controls.Add(label6);
             Controls.Add(btnReservar);
@@ -346,11 +396,15 @@
             Controls.Add(label9);
             Controls.Add(txtNIF);
             Controls.Add(groupBox1);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "Reservas";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Reservas";
             Load += Reservas_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -384,5 +438,8 @@
         private Button btnReservar;
         private Label label6;
         private TextBox txt_Mesa;
+        private Panel panel1;
+        private PictureBox pictureBox1;
+        private Panel panel2;
     }
 }

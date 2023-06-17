@@ -70,40 +70,40 @@ namespace P_Académico
             criarFuncionario.ShowDialog();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click_1(object sender, EventArgs e)
         {
             ApagarEditarCliente apagarEditarCliente = new ApagarEditarCliente();
             apagarEditarCliente.ShowDialog();
         }
 
-        private void btnReservas_Click(object sender, EventArgs e)
+        private void btn_updatefunc_Click_1(object sender, EventArgs e)
+        {
+            ApagarEditarFuncionario apagarEditarFuncionario = new ApagarEditarFuncionario();
+            apagarEditarFuncionario.ShowDialog();
+        }
+
+        private void btnReservas_Click_1(object sender, EventArgs e)
         {
             Reservas reserva = new Reservas();
             reserva.ShowDialog();
         }
 
-        private void btn_CriarProdutos_Click(object sender, EventArgs e)
+        private void btn_CriarProdutos_Click_1(object sender, EventArgs e)
         {
             CriarProduto CriaProduto = new CriarProduto();
             CriaProduto.ShowDialog();
         }
 
-        private void btn_Update_Produto_Click(object sender, EventArgs e)
+        private void btn_Update_Produto_Click_1(object sender, EventArgs e)
         {
             ApagarProdutos ApagaProduto = new ApagarProdutos();
             ApagaProduto.ShowDialog();
         }
 
-        private void btn_CriarPedido_Click(object sender, EventArgs e)
+        private void btn_CriarPedido_Click_1(object sender, EventArgs e)
         {
-            PrePedido criarPedido = new PrePedido();
+            Carta criarPedido = new Carta();
             criarPedido.ShowDialog();
-        }
-
-        private void btn_updatefunc_Click(object sender, EventArgs e)
-        {
-            ApagarEditarFuncionario apagarEditarFuncionario = new ApagarEditarFuncionario();
-            apagarEditarFuncionario.ShowDialog();
         }
     }
 }

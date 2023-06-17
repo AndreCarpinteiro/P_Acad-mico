@@ -83,6 +83,106 @@ namespace P_Académico.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2771406 {
+            get {
+                object obj = ResourceManager.GetObject("2771406", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _27714061 {
+            get {
+                object obj = ResourceManager.GetObject("27714061", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _27714062 {
+            get {
+                object obj = ResourceManager.GetObject("27714062", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _27714063 {
+            get {
+                object obj = ResourceManager.GetObject("27714063", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _27714064 {
+            get {
+                object obj = ResourceManager.GetObject("27714064", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _27714065 {
+            get {
+                object obj = ResourceManager.GetObject("27714065", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _27714066 {
+            get {
+                object obj = ResourceManager.GetObject("27714066", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _27714067 {
+            get {
+                object obj = ResourceManager.GetObject("27714067", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _283_2836056_delivery_box_product_cart_shipping_shipping_product_icon {
+            get {
+                object obj = ResourceManager.GetObject("283-2836056_delivery-box-product-cart-shipping-shipping-product-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3082745 {
+            get {
+                object obj = ResourceManager.GetObject("3082745", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _3502458 {
             get {
                 object obj = ResourceManager.GetObject("3502458", resourceCulture);
@@ -116,6 +216,38 @@ namespace P_Académico.Properties {
         internal static System.Drawing.Bitmap b3ccd57b054a73af1a0d281265b54ec8 {
             get {
                 object obj = ResourceManager.GetObject("b3ccd57b054a73af1a0d281265b54ec8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap png_transparent_computer_icons_agenda_miscellaneous_cdr_text {
+            get {
+                object obj = ResourceManager.GetObject("png-transparent-computer-icons-agenda-miscellaneous-cdr-text", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap png_transparent_shopping_cart_icon_product_return_shopping_cart_retail_supermarket_objects {
+            get {
+                object obj = ResourceManager.GetObject("png-transparent-shopping-cart-icon-product-return-shopping-cart-retail-supermarke" +
+                        "t-objects", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap png_transparent_shopping_cart_icon_product_return_shopping_cart_retail_supermarket_objects_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("png-transparent-shopping-cart-icon-product-return-shopping-cart-retail-supermarke" +
+                        "t-objects-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

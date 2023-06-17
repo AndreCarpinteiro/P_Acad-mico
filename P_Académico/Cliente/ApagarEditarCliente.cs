@@ -294,14 +294,14 @@ namespace P_Académico.Cliente
             {
                 string uid = clienteSelecionado.Id;
                 // Excluir o utilizador do Firebase Authentication
-                    string path = Path.Combine(Environment.CurrentDirectory, "C:\\Users\\André\\Desktop\\Projecto Académico\\P_Académico\\restaurante-b1d36-firebase-adminsdk-disgo-c4a8b9808c.json");
-                    var credential = GoogleCredential.FromFile(path);
-                    FirebaseApp firebaseApp = FirebaseApp.Create(new AppOptions()
-                    {
-                        Credential = credential
-                    });
-                    FirebaseAuth auth = FirebaseAuth.GetAuth(firebaseApp);
-                    await auth.DeleteUserAsync(uid);
+                string path = Path.Combine(Environment.CurrentDirectory, "C:\\Users\\André\\Desktop\\Projecto Académico\\P_Académico\\restaurante-b1d36-firebase-adminsdk-disgo-c4a8b9808c.json");
+                var credential = GoogleCredential.FromFile(path);
+                FirebaseApp firebaseApp = FirebaseApp.Create(new AppOptions()
+                {
+                    Credential = credential
+                });
+                FirebaseAuth auth = FirebaseAuth.GetAuth(firebaseApp);
+                await auth.DeleteUserAsync(uid);
 
                 // Excluir o registro do cliente do banco de dados Firebase Realtime
                 FirebaseResponse response = await client.DeleteAsync("ListaClientes/" + uid);
