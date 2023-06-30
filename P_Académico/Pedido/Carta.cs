@@ -29,6 +29,7 @@ namespace P_Académico.Pedido
         }
 
         List<Pedido> pedidos = new List<Pedido>();
+        DateTime dataAtual = DateTime.Now;
 
         IFirebaseConfig fcon = new FirebaseConfig()
         {
@@ -188,6 +189,7 @@ namespace P_Académico.Pedido
                 // Verificar se foram adicionados produtos
                 if (dataGridView1.Rows.Count > 1) // Considerando que a primeira linha é uma linha vazia
                 {
+                    string dataFormatada = dataAtual.ToString("dd/MM/yyyy HH:mm:ss");
                     // Adicionar os pedidos
                     foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
@@ -205,7 +207,19 @@ namespace P_Académico.Pedido
                                 Categoria = categoria,
                                 Preco = precoUnitario.ToString("F2", CultureInfo.GetCultureInfo("pt-PT")),
                                 Quantidade = quantidade,
-                                User = destino // Usar o clienteID ou a mesa de destino
+                                User = destino, // Usar o clienteID ou a mesa de destino
+                                Data = new DataPedido
+                                {
+                                    date = dataAtual.Day,
+                                    day = (int)dataAtual.DayOfWeek,
+                                    hours = dataAtual.Hour,
+                                    minutes = dataAtual.Minute,
+                                    month = dataAtual.Month - 1, // Firebase utiliza índice 0 para janeiro
+                                    seconds = dataAtual.Second,
+                                    time = dataAtual.Ticks / TimeSpan.TicksPerMillisecond,
+                                    timezoneOffset = 0, // Supondo que a hora está no fuso horário UTC
+                                    year = dataAtual.Year
+                                }
                             };
 
                             FirebaseResponse response = await client.PushAsync("Pedidos/", pedido);

@@ -34,6 +34,7 @@ namespace P_Académico.Reserva
 
         int validaRserva = 0;
         int mesaID = -1;
+        string clienteID;
         DateTime dataEscolhida;
         ArrayList datasReservadas = new ArrayList();
 
@@ -100,6 +101,7 @@ namespace P_Académico.Reserva
                         // Verificar se o objeto foi encontrado antes de atualizar os campos de texto
                         if (clienteSelecionado != null)
                         {
+                            clienteID = clienteSelecionado.Id;
                             txtNIF.Text = clienteSelecionado.NIF;
                             txtApelido.Text = clienteSelecionado.Apelido;
                             txtNome.Text = clienteSelecionado.Nome;
@@ -172,7 +174,8 @@ namespace P_Académico.Reserva
                 Apelido = txtApelido.Text,
                 DataReserva = dataEscolhida.ToString(),
                 ContactoTelefonico = txtContacto.Text,
-                MesaID = mesaID
+                MesaID = mesaID,
+                Id = clienteID
             };
 
             // adicionar a mesa à lista de mesas reservadas

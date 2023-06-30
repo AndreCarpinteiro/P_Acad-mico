@@ -16,6 +16,7 @@ using System.Diagnostics.Metrics;
 using System.Runtime.CompilerServices;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using System.Text.RegularExpressions;
+using FirebaseAdmin.Auth;
 
 namespace P_Académico.Cliente
 {
@@ -33,26 +34,34 @@ namespace P_Académico.Cliente
         };
         IFirebaseClient client;
 
-        private void inserirbtn_Click(object sender, EventArgs e)
+        private async void inserirbtn_Click(object sender, EventArgs e)
         {
 
 
-            if (Confirma() == true)
+            if (Confirma())
             {
                 string genero = null;
 
-                if (radioFemea.Checked == true)
+                if (radioFemea.Checked)
                 {
-                    genero = "Femenino";
+                    genero = "Feminino";
                 }
-                else if (radioMacho.Checked == true)
+                else if (radioMacho.Checked)
                 {
                     genero = "Masculino";
                 }
-                else if (radioOutro.Checked == true)
+                else if (radioOutro.Checked)
                 {
                     genero = "Outro";
                 }
+
+                // Cria um novo utilizador no Firebase Authentication
+                /*var user = await FirebaseAuth.DefaultInstance.CreateUserAsync(new UserRecordArgs()
+                {
+                    Email = txtEmail.Text,
+                    Password = "123456",
+                    EmailVerified = true
+                });*/
 
                 ClasseCliente std = new ClasseCliente()
                 {
@@ -63,19 +72,41 @@ namespace P_Académico.Cliente
                     DataNascimento = PickerDataNascimento.Text,
                     ContactoTelefonico = txtContacto.Text,
                     Email = txtEmail.Text,
-                    Genero = genero
+                    Genero = genero,
+                    Id = string.Empty // Inicialize como vazio, será preenchido posteriormente
                 };
-                var setter = client.Set("ListaClientes/" + txtNIF.Text, std);
-                MessageBox.Show("Introduzido com Sucesso");
-                #region Limpar os campos                        
-                PickerDataNascimento.Value = new DateTime(1920, 10, 28);
-                radioFemea.Checked = false;
-                radioMacho.Checked = false;
-                radioOutro.Checked = false;
-                //função que limpa as textboxes
-                LimparCaixas(Controls);
-                return;
-                #endregion
+
+                // Conecte-se ao Firebase usando a configuração
+                client = new FireSharp.FirebaseClient(fcon);
+
+                // Insira o cliente na coleção "ListaClientes" usando o método Push()
+                var response = await client.PushAsync("ListaClientes/", std);
+
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    // Obtenha o ID do cliente do objeto FirebaseResponse
+                    string idCliente = response.Result.name;
+
+                    // Atualize o objeto std com o ID do cliente
+                    std.Id = idCliente;
+
+                    // Atualize o registro do cliente com o ID usando o método Set()
+                    var updateResponse = await client.SetAsync($"ListaClientes/{idCliente}", std);
+
+                    if (updateResponse.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        MessageBox.Show("Introduzido com Sucesso");
+                        LimparCaixas(Controls);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocorreu um erro ao inserir o cliente");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Ocorreu um erro ao inserir o cliente");
+                }
             }
         }
 

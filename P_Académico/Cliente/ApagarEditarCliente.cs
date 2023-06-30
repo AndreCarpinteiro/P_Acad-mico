@@ -125,12 +125,13 @@ namespace P_Académico.Cliente
                 Nome = txtNome.Text,
                 ContactoTelefonico = txtContacto.Text,
                 Email = txtEmail.Text,
-                DataNascimento = PickerNascimento.Text
+                DataNascimento = PickerNascimento.Text,
+                Id = clienteSelecionado.Id
             };
 
             if (Confirma() == true)
             {
-                FirebaseResponse resp = await client.UpdateAsync("ListaClientes/" + txtNIF.Text, cli);
+                FirebaseResponse resp = await client.UpdateAsync("ListaClientes/" + clienteSelecionado.Id, cli);
                 txtNIF.Text = string.Empty;
                 txtEndereço.Text = string.Empty;
                 txtEmail.Text = string.Empty;

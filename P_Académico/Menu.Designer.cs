@@ -250,7 +250,7 @@
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightCoral;
-            ClientSize = new Size(1182, 597);
+            ClientSize = new Size(1144, 597);
             Controls.Add(pictureBox5);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
